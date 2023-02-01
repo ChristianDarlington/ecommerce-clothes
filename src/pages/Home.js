@@ -1,19 +1,27 @@
-import { useState, useEffect } from "react"
+import './styles/Home.css'
+const Home = ({setResults, results}) => {
 
-const Home = () => {
 
-
-  // const [results, setResults] = useState([])
-
-  useEffect(() => {
-    fetch('https://api.thedogapi.com/v1/images/search')
-    .then(response => response.json())
-    .then(data => console.log(data))
-     }, [])
-
+  
 
   return ( 
-    <h1>Home page</h1>
+    <>
+    <h1>Available Items</h1>
+    <div className='item-container'>
+    {results && results.map(result => (
+    <div className='item' key={result.id}>
+        <h4 className='title'>{result.title}</h4>
+        <h6 className='price'>${result.price}</h6>
+      <div className='imgBx'>
+        <img src={result.image} alt='pic'></img>
+      </div>
+      <div className='footer'>
+      <button className='btn'>Purchase Product</button>
+      </div>
+    </div>
+      ))}
+      </div>
+    </>
    );
 }
  

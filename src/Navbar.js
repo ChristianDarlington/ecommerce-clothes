@@ -1,39 +1,37 @@
 import React from "react";
 import {Link} from 'react-router-dom'
+import {FaStore} from "react-icons/fa"
 import './App.css'
+
 
 
 const Navbar = () => {
 
 
-  return ( 
+
+return ( 
     <nav className="navbar">     
    <div className="nav-container">
       <Link exact to='/home' className="nav-logo">
-        Doggo Adoption
+        Shoppy Market
+      <FaStore className="icon-shop"/>
       </Link>
 
         <ul className="nav-menu">
           <li className="nav-item">
-        <Link to='/home' activeClassName='active' className="nav-links">
+        <Link to='/home' activeclassname='active' className="nav-links">
         Home
         </Link>
         </li>     
 
         <li className="nav-item">
-        <Link to='/about' activeClassName='active' className="nav-links">
+        <Link to='/about' activeclassname='active' className="nav-links">
          About
          </Link>
          </li>
 
          <li className="nav-item">
-         <Link to='/pricing' activeClassName='active' className="nav-links">
-         Pricing
-         </Link> 
-         </li> 
-
-         <li className="nav-item">
-         <Link to='contact' activeClassName='active' className="nav-links">
+         <Link to='contact' activeclassname='active' className="nav-links">
          Contact Us
          </Link>
          </li>
